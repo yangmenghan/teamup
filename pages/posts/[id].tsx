@@ -5,7 +5,13 @@ import Head from "next/head";
 import utilStyles from '../../styles/utils.module.css'
 import {GetStaticPaths, GetStaticProps} from "next";
 
-export default function Post({postData}) {
+export default function Post({postData}: {
+    postData: {
+        title: string
+        date: string
+        contentHtml: string
+    }
+}) {
     return (
         <Layout>
             <Head>
@@ -20,7 +26,6 @@ export default function Post({postData}) {
             </article>
         </Layout>
     )
-
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
