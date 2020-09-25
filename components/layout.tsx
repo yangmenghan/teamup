@@ -23,6 +23,7 @@ export default function Layout ({ children }: {
         <GridColumn>
           <Container textAlign={'center'}>
             <h1>{siteTitle}</h1>
+            <br/>
             <main>{children}</main>
           </Container>
         </GridColumn>

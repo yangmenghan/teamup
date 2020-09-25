@@ -1,16 +1,14 @@
 import React from 'react'
 import Layout from '../components/layout'
+import { Button, Input } from 'semantic-ui-react'
 
 export default function CreateGame () {
   return (
     <Layout>
-      <form>
-        <label>
-          Your Name :
-          <input type={'text'}/>
-        </label>
-        <input type={'submit'} value={'Send'}/>
-      </form>
+      <Input type={'text'} placeholder={'Your Name'} action>
+        <input/>
+        <Button type={'submit'} color={'teal'}>Start</Button>
+      </Input>
     </Layout>
   )
 }
