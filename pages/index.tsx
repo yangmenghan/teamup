@@ -14,7 +14,7 @@ export default function Home ({ allPostsData }: {
   }[]
 }) {
   return (
-    <Layout home>
+    <Layout>
       <Head>…</Head>
       <section className={utilStyles.headingMd}>…</section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
