@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
+import { Container, Grid, GridColumn } from 'semantic-ui-react'
 
 export const siteTitle = 'Undercover Online'
 
@@ -18,8 +19,14 @@ export default function Layout ({ children }: {
         <meta name="og:title" content={siteTitle}/>
         <title>{siteTitle}</title>
       </Head>
-      <h1>{siteTitle}</h1>
-      <main>{children}</main>
+      <Grid verticalAlign='middle' centered style={{ height: '100vh' }}>
+        <GridColumn>
+          <Container textAlign={'center'}>
+            <h1>{siteTitle}</h1>
+            <main>{children}</main>
+          </Container>
+        </GridColumn>
+      </Grid>
     </div>
   )
 }
