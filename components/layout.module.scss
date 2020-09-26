@@ -1,5 +1,7 @@
+@import './styles/palette.scss';
+
 .card {
-  padding: 2em;
+  padding: 3em;
   background-color: white;
   text-align: center;
   round-clip: 1em;
@@ -9,5 +11,34 @@
 
 .title {
   font-weight: lighter;
+  margin-top: 0;
+  margin-bottom: .6em;
+}
+
+.card input {
+  padding: 1em;
+  border-color: $ming-overlay;
+  border-width: 1px;
+}
+
+.card input[type=text] {
+  background-color: $ming-overlay;
+  border-radius: .3em 0 0 .3em;
+
+  &:focus {
+    background-color: $dark-slate-gray-overlay;
+    outline: none;
+  }
+}
+
+.card input[type=submit] {
+  background-color: $ming;
+  color: white;
+  border-radius: 0 .3em .3em 0;
+
+
+  &:hover {
+    background-color: $dark-slate-gray;
+  }
 }
 

@@ -20,7 +20,7 @@ export default function CreateGame () {
       <div className={styles.card}>
         <h1 className={styles.title}>{siteTitle}</h1>
         <form>
-          <input type={'text'} required id={'name'}/>
+          <input type={'text'} required id={'name'} placeholder={'Your Name'}/>
           <input type={'submit'} value={'Submit'}/>
         </form>
       </div>
