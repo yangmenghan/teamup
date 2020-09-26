@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
+import styles from './layout.module.scss'
 
 export const siteTitle = 'Undercover Online'
 
@@ -18,8 +19,10 @@ export default function Layout ({ children }: {
         <meta name="og:title" content={siteTitle}/>
         <title>{siteTitle}</title>
       </Head>
-      <h1>{siteTitle}</h1>
-      <main>{children}</main>
+      <div className={styles.card}>
+        <h1 className={styles.title}>{siteTitle}</h1>
+        <main>{children}</main>
+      </div>
     </div>
   )
 }
