@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from '../components/layout'
+import CreateGame from '../components/createGame'
 
-export default function CreateGame () {
-  return <Layout/>
+export default function Home () {
+  return <CreateGame/>
 }

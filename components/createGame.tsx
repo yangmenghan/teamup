@@ -4,7 +4,7 @@ import styles from './layout.module.scss'
 
 export const siteTitle = 'Undercover Online'
 
-export default function Layout () {
+export default function CreateGame () {
   return (
     <div>
       <Head>

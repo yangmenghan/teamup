@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import Layout from '../../components/layout'
+import CreateGame from '../../components/createGame'
 
 export default function FirstPost () {
   return (
-    <Layout>
+    <CreateGame>
       <Head>
         <title>First Post</title>
       </Head>
@@ -14,6 +14,6 @@ export default function FirstPost () {
           <a>Back to home</a>
         </Link>
       </h2>
-    </Layout>
+    </CreateGame>
   )
 }

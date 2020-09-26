@@ -1,4 +1,4 @@
-import Layout from '../components/layout'
+import CreateGame from '../components/createGame'
 import utilStyles from '../styles/utils.module.css'
 import Head from 'next/head'
 import { getSortedPostsData } from '../lib/posts'
@@ -14,7 +14,7 @@ export default function Home ({ allPostsData }: {
   }[]
 }) {
   return (
-    <Layout>
+    <CreateGame>
       <Head>…</Head>
       <section className={utilStyles.headingMd}>…</section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -31,7 +31,7 @@ export default function Home ({ allPostsData }: {
           ))}
         </ul>
       </section>
-    </Layout>
+    </CreateGame>
   )
 }
 
