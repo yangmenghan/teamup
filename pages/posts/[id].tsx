@@ -1,4 +1,4 @@
-import CreateGame from '../../components/createGame'
+import Layout from '../../components/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Date from '../../components/date'
 import Head from 'next/head'
@@ -13,7 +13,7 @@ export default function Post ({ postData }: {
   }
 }) {
   return (
-    <CreateGame>
+    <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -24,7 +24,7 @@ export default function Post ({ postData }: {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }}/>
       </article>
-    </CreateGame>
+    </Layout>
   )
 }
 
