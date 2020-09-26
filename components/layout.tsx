@@ -4,9 +4,7 @@ import styles from './layout.module.scss'
 
 export const siteTitle = 'Undercover Online'
 
-export default function Layout ({ children }: {
-  children: React.ReactNode
-}) {
+export default function Layout () {
   return (
     <div>
       <Head>
@@ -21,7 +19,10 @@ export default function Layout ({ children }: {
       </Head>
       <div className={styles.card}>
         <h1 className={styles.title}>{siteTitle}</h1>
-        <main>{children}</main>
+        <form>
+          <input type={'text'} required id={'name'}/>
+          <input type={'submit'} value={'Submit'}/>
+        </form>
       </div>
     </div>
   )
