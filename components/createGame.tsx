@@ -9,7 +9,7 @@ export default function CreateGame () {
       <h4 className={styles.subtitle}>{siteSubtitle}</h4>
       <form>
         <input type={'text'} required id={'name'} placeholder={'Your Name'}/>
-        <input type={'submit'} value={'Submit'}/>
+        <div><input type={'submit'} value={'Start Game'}/></div>
       </form>
     </div>
   )
