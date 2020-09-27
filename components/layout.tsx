@@ -2,6 +2,7 @@ import Head from 'next/head'
 import React from 'react'
 
 export const siteTitle = 'Undercover Online'
+export const siteSubtitle = 'A multiplayer game about words and lies'
 
 export default function Layout ({ children }: {
   children: React.ReactNode
