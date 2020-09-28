@@ -1,0 +1,52 @@
+@import './styles/palette.scss';
+
+.playerContainer {
+  text-align: center;
+  display: inline-block;
+}
+
+.currentPlayerContainer {
+  border-width: 2px;
+  border-radius: 1.5em;
+  padding: 1.5em 2em;
+  border-color: $cafe-au-lait;
+  border-style: solid;
+}
+
+.currentPlayer {
+  display: inline-block;
+  color: $cafe-au-lait;
+  font-size: .8em;
+  padding: 0 1em;
+  transform: translateY(2em);
+  background-color: $raisin-black;
+}
+
+.profile {
+  background-color: $ivory;
+  border-radius: 50%;
+  width: 5em;
+  height: 5em;
+}
+
+.nameInitial {
+  color: $raisin-black;
+  font-size: 3em;
+  margin: auto;
+}
+
+.userName {
+  color: $ivory;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.word {
+  display: inline-block;
+  color: $cafe-au-lait;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px $cafe-au-lait solid;
+  margin-top: 2em;
+  padding: .2em .4em;
+}
