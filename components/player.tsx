@@ -1,12 +1,6 @@
 import React from 'react'
 import style from './player.module.scss'
-
-export class PlayerEntity {
-  id: number
-  name: string
-  isCurrentPlayer: boolean
-  lastWord?: string
-}
+import { PlayerEntity } from '../lib/game'
 
 export class PlayerProp {
   player: PlayerEntity
