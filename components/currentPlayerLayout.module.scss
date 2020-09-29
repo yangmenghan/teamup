@@ -1,0 +1,22 @@
+@import './styles/palette.scss';
+
+.containerVisible {
+  padding: 1.5em 1.5em;
+  border-width: 2px;
+  border-radius: 1.5em;
+  border-color: $cafe-au-lait;
+  border-style: solid;
+}
+
+.containerInvisible {
+  padding: 1.5em 1.5em;
+  border-color: transparent;
+}
+
+.text {
+  color: $cafe-au-lait;
+  font-size: .8em;
+  padding: 0 1em;
+  background-color: $raisin-black;
+  user-select: none;
+}
