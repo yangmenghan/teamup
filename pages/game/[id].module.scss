@@ -1,6 +1,9 @@
 .game {
+  margin-top: 6em;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10em, 20em));
   grid-gap: 5em;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: end;
+  grid-auto-flow: row;
 }
