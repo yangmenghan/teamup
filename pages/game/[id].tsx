@@ -1,6 +1,6 @@
 import React from 'react'
 import Player from '../../components/player'
-import { PlayerEntity } from '../../lib/game'
+import { PlayerEntity, subscribeToGameChange } from '../../lib/game'
 import Layout from '../../components/layout'
 import style from './[id].module.scss'
 
@@ -24,6 +24,14 @@ export default class Game extends React.Component<GameProps, GameState> {
         isCurrentPlayer: true
       }]
     }
+  }
+
+  componentDidMount () {
+    subscribeToGameChange(this)
+  }
+
+  onGameChange (players: Array<PlayerEntity>) {
+    this.setState({ players: players })
   }
 
   render () {
