@@ -3,6 +3,7 @@
 .playerContainer {
   text-align: center;
   display: inline-block;
+  margin: auto;
 }
 
 .currentPlayerContainer {
@@ -20,6 +21,7 @@
   padding: 0 1em;
   transform: translateY(2em);
   background-color: $raisin-black;
+  user-select: none;
 }
 
 .profile {
