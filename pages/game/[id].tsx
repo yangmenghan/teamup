@@ -14,15 +14,7 @@ export default class Game extends React.Component<GameProps, GameState> {
   constructor (props: Readonly<GameProps>) {
     super(props)
     this.state = {
-      players: [{
-        id: 0,
-        name: 'tester',
-        isCurrentPlayer: false
-      }, {
-        id: 1,
-        name: 'Tester2',
-        isCurrentPlayer: true
-      }]
+      players: []
     }
   }
 
