@@ -6,9 +6,6 @@ const firebaseConfig = {
   projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID
 }
 
-console.log(firebaseConfig)
-if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig)
-}
+if (!firebase.apps.length) {firebase.initializeApp(firebaseConfig)}
 
 export const db = firebase.database()
