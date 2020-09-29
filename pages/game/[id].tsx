@@ -38,7 +38,7 @@ export default class Game extends React.Component<GameProps, GameState> {
     return (
       <Layout>
         <div className={style.game}>
-          {this.state.players.map((newPlayer) => <Player player={newPlayer}/>)}
+          {this.state.players.map((newPlayer) => <Player player={newPlayer} key={newPlayer.id}/>)}
         </div>
       </Layout>
     )
