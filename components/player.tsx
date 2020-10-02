@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './player.module.scss'
-import { PlayerEntity } from '../lib/game'
 import { CurrentPlayerLayout } from './currentPlayerLayout'
+import { PlayerEntity } from '../lib/core/models'
 
 export class PlayerProp {
   player: PlayerEntity

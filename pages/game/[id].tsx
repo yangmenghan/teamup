@@ -1,8 +1,9 @@
 import React from 'react'
 import Player from '../../components/player'
-import { PlayerEntity, subscribeToGameChange } from '../../lib/game'
+import { subscribeToGameChange } from '../../lib/game'
 import Layout from '../../components/layout'
 import style from './[id].module.scss'
+import { PlayerEntity } from '../../lib/core/models'
 
 interface GameProps {}
 
