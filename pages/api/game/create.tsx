@@ -42,7 +42,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     return (gameId: string, userId: string) => {
       res.status(200)
         .json({
-          game: gameId,
+          gameId: gameId,
           userId: userId
         })
     }
