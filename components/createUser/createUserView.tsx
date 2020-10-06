@@ -1,19 +1,18 @@
-import styles from './createGame.module.scss'
+import styles from './createUserView.module.scss'
 import React from 'react'
-import { siteSubtitle, siteTitle } from './layout'
 import { withRouter } from 'next/router'
 import { WithRouterProps } from 'next/dist/client/with-router'
-import createGame from '../lib/ui/createGamePresenter'
+import { siteSubtitle, siteTitle } from '../layout'
+import createGame from '../../lib/core/createGame'
 
 interface CreateGameProps extends WithRouterProps {
-  onSubmit: (userName: string) => void
 }
 
 interface CreateGameState {
   name: string
 }
 
-class CreateGame extends React.Component<CreateGameProps, CreateGameState> {
+class CreateUserView extends React.Component<CreateGameProps, CreateGameState> {
   constructor (prop: CreateGameProps) {
     super(prop)
     this.state = { name: '' }
@@ -43,4 +42,4 @@ class CreateGame extends React.Component<CreateGameProps, CreateGameState> {
   }
 }
 
-export default withRouter<CreateGameProps>(CreateGame)
+export default withRouter<CreateGameProps>(CreateUserView)
