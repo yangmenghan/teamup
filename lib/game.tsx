@@ -1,13 +1,11 @@
 import { db } from './firebase'
 import { PlayerEntity } from './core/models'
 
-const gameId = '123456'
-
 interface GameChangeListener {
   onGameChange (players: Array<PlayerEntity>)
 }
 
-export function subscribeToGameChange (onGameChangeListener: GameChangeListener) {
+export function subscribeToGameChange (gameId: string, onGameChangeListener: GameChangeListener) {
   const path = `games/${gameId}/players`
 
   db.ref(path).on('value', snapshot => {

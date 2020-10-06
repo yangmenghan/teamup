@@ -1,17 +1,21 @@
 import React from 'react'
 import Player from '../../components/player'
-import { subscribeToGameChange } from '../../lib/game'
 import Layout from '../../components/layout'
 import style from './[id].module.scss'
 import { PlayerEntity } from '../../lib/core/models'
+import { withRouter } from 'next/router'
+import { WithRouterProps } from 'next/dist/client/with-router'
+import { subscribeToGameChange } from '../../lib/game'
 
-interface GameProps {}
+interface GameProps extends WithRouterProps {
+  id: string
+}
 
 interface GameState {
   players: Array<PlayerEntity>
 }
 
-export default class Game extends React.Component<GameProps, GameState> {
+export class Game extends React.Component<GameProps, GameState> {
   constructor (props: Readonly<GameProps>) {
     super(props)
     this.state = {
@@ -19,8 +23,13 @@ export default class Game extends React.Component<GameProps, GameState> {
     }
   }
 
+  static async getInitialProps (context) {
+    return context.query
+  }
+
   componentDidMount () {
-    subscribeToGameChange(this)
+    console.log("Showing game with id:" + this.props.id)
+    subscribeToGameChange(this.props.id, this)
   }
 
   onGameChange (players: Array<PlayerEntity>) {
@@ -37,3 +46,5 @@ export default class Game extends React.Component<GameProps, GameState> {
     )
   }
 }
+
+export default withRouter<GameProps>(Game)
