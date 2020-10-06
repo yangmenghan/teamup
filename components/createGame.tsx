@@ -3,9 +3,11 @@ import React from 'react'
 import { siteSubtitle, siteTitle } from './layout'
 import { withRouter } from 'next/router'
 import { WithRouterProps } from 'next/dist/client/with-router'
-import Cookies from 'universal-cookie'
+import createGame from '../lib/ui/createGamePresenter'
 
-interface CreateGameProps extends WithRouterProps {}
+interface CreateGameProps extends WithRouterProps {
+  onSubmit: (userName: string) => void
+}
 
 interface CreateGameState {
   name: string
@@ -24,26 +26,7 @@ class CreateGame extends React.Component<CreateGameProps, CreateGameState> {
 
   private handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    const response = await this.requestCreateGame()
-    const json = await response.json()
-    this.saveUser(json.userId)
-    await this.props.router.push('/game/' + json.gameId)
-  }
-
-  private async requestCreateGame () {
-    return await fetch('/api/game/create', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ userName: this.state.name }),
-    })
-  }
-
-  private saveUser (userId: string) {
-    const cookies = new Cookies()
-    cookies.set('userId', userId)
+    await createGame(this.state.name, this.props.router)
   }
 
   render () {
