@@ -1,6 +1,6 @@
 import Cookies from 'universal-cookie'
 
-export class CookiesDao {
+export class LocalDao {
 
   static saveUser (userId: string) {
     const cookies = new Cookies()

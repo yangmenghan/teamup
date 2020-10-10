@@ -1,4 +1,4 @@
-export class Api {
+export class ApiDao {
 
   static async createGame (userName: string) {
     return await fetch('/api/game/create', {
