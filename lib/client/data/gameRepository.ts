@@ -15,9 +15,10 @@ export class GameRepository {
     return response.gameId
   }
 
-  static async addUser (userName: string, gameId: string) {
+  static async addUser (userName: string, gameId: string): Promise<string> {
     const response = await ApiDao.addUser(userName, gameId)
     LocalDao.saveUser(response.userId)
+    return response.userId
   }
 
   static subscribeToGameChanges (gameId: string, listener: GameChangeListener) {
