@@ -1,18 +1,16 @@
 import styles from './createUserView.module.scss'
 import React from 'react'
-import { withRouter } from 'next/router'
-import { WithRouterProps } from 'next/dist/client/with-router'
 import { siteSubtitle, siteTitle } from '../layout'
-import { createGame } from '../../lib/core/presenters'
 
-interface CreateGameProps extends WithRouterProps {
+interface CreateGameProps {
+  onSubmit: (name: string) => void
 }
 
 interface CreateGameState {
   name: string
 }
 
-class CreateUserView extends React.Component<CreateGameProps, CreateGameState> {
+export class CreateUserView extends React.Component<CreateGameProps, CreateGameState> {
   constructor (prop: CreateGameProps) {
     super(prop)
     this.state = { name: '' }
@@ -25,7 +23,7 @@ class CreateUserView extends React.Component<CreateGameProps, CreateGameState> {
 
   private handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    await createGame(this.state.name, this.props.router)
+    await this.props.onSubmit(this.state.name)
   }
 
   render () {
@@ -41,5 +39,3 @@ class CreateUserView extends React.Component<CreateGameProps, CreateGameState> {
     )
   }
 }
-
-export default withRouter<CreateGameProps>(CreateUserView)
