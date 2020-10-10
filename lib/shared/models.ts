@@ -1,23 +1,23 @@
-export class GameEntity {
+export type GameEntity = {
   isStarted: boolean
   words?: WordsEntity
   players: Array<PlayerEntity>
   plays?: Map<string, Array<TurnEntity>>
 }
 
-export class WordsEntity {
+export type WordsEntity = {
   civilian: string
   undercover: string
 }
 
-export class PlayerEntity {
+export type PlayerEntity = {
   id: string
   name: string
   isCurrentPlayer: boolean
   lastWord?: string
 }
 
-export class TurnEntity {
+export type TurnEntity = {
   votes: Map<string, string>
   words: Map<string, string>
 }
