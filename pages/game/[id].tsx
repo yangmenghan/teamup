@@ -5,7 +5,7 @@ import style from './[id].module.scss'
 import { PlayerEntity } from '../../lib/core/models'
 import { withRouter } from 'next/router'
 import { WithRouterProps } from 'next/dist/client/with-router'
-import { subscribeToGameChange } from '../../lib/game'
+import { subscribeToGameChange } from '../../lib/firebaseDao'
 
 interface GameProps extends WithRouterProps {
   id: string
