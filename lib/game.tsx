@@ -1,5 +1,5 @@
-import { db } from './firebase'
-import { PlayerEntity } from './core/shared/models'
+import { PlayerEntity } from './shared/models'
+import { db } from './shared/utils/firebase'
 
 interface GameChangeListener {
   onGameChange (players: Array<PlayerEntity>)
