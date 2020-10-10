@@ -10,7 +10,7 @@ interface CreateGameState {
   name: string
 }
 
-export class CreateUserView extends React.Component<CreateGameProps, CreateGameState> {
+export default class CreateUserView extends React.Component<CreateGameProps, CreateGameState> {
   constructor (prop: CreateGameProps) {
     super(prop)
     this.state = { name: '' }

@@ -2,10 +2,10 @@ import React from 'react'
 import Player from '../../components/player'
 import Layout from '../../components/layout'
 import style from './[id].module.scss'
-import { PlayerEntity } from '../../lib/core/models'
 import { withRouter } from 'next/router'
 import { WithRouterProps } from 'next/dist/client/with-router'
-import { subscribeToGameChange } from '../../lib/firebaseDao'
+import { PlayerEntity } from '../../lib/shared/models'
+import { GameRepository } from '../../lib/client/data/gameRepository'
 
 interface GameProps extends WithRouterProps {
   id: string
@@ -28,8 +28,8 @@ export class Game extends React.Component<GameProps, GameState> {
   }
 
   componentDidMount () {
-    console.log("Showing game with id:" + this.props.id)
-    subscribeToGameChange(this.props.id, this)
+    console.log('Showing game with id:' + this.props.id)
+    GameRepository.subscribeToGameChanges(this.props.id, this)
   }
 
   onGameChange (players: Array<PlayerEntity>) {

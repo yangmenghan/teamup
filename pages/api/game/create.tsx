@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { v4 as uuidV4 } from 'uuid'
-import { db } from '../../../lib/firebase'
+import { db } from '../../../lib/shared/utils/firebase'
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   createGame(req.body.userName, getGameCreatedCallback(res))
