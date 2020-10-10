@@ -3,7 +3,7 @@ import React from 'react'
 import { withRouter } from 'next/router'
 import { WithRouterProps } from 'next/dist/client/with-router'
 import { siteSubtitle, siteTitle } from '../layout'
-import createGame from '../../lib/core/createGame'
+import { createGame } from '../../lib/core/presenters'
 
 interface CreateGameProps extends WithRouterProps {
 }
