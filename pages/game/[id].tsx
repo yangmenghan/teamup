@@ -32,7 +32,7 @@ export class Game extends React.Component<GameProps, GameState> {
     GameRepository.subscribeToGameChanges(this.props.id, this)
   }
 
-  onGameChange (players: Array<PlayerEntity>) {
+  onGameChange = (players: Array<PlayerEntity>) => {
     this.setState({ players: players })
   }
 
