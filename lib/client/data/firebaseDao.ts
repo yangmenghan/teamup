@@ -1,6 +1,6 @@
 import { db } from '../../shared/utils/firebase'
 import { PlayerEntity } from '../../shared/models'
-import DataSnapshot = firebase.database.DataSnapshot
+import { DataSnapshot } from '@firebase/database-types'
 
 export class FirebaseDao {
 
