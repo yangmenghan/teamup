@@ -21,6 +21,10 @@ export class GameRepository {
     return response.userId
   }
 
+  static getUserId(){
+    return LocalDao.getUserId()
+  }
+
   static subscribeToGameChanges (gameId: string, listener: GameChangeListener) {
     FirebaseDao.subscribeToGameChange(gameId, listener.onGameChange)
   }

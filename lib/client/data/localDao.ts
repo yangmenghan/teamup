@@ -6,4 +6,9 @@ export class LocalDao {
     const cookies = new Cookies()
     cookies.set('userId', userId)
   }
+
+  static getUserId () {
+    const cookies = new Cookies()
+    return cookies.get('userId') as string
+  }
 }
