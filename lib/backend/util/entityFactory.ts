@@ -16,3 +16,10 @@ export function createNewUser (userId: string, userName: string) {
     role: null
   }
 }
+
+export function createWords (civilianWord: string, undercoverWord: string) {
+  return {
+    civilian: civilianWord,
+    undercover: undercoverWord
+  }
+}
