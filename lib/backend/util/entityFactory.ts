@@ -12,6 +12,7 @@ export function createNewUser (userId: string, userName: string) {
     id: userId,
     name: userName,
     isCurrentPlayer: false,
-    lastWord: null
+    lastWord: null,
+    role: null
   }
 }

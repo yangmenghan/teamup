@@ -14,8 +14,11 @@ export type PlayerEntity = {
   id: string
   name: string
   isCurrentPlayer: boolean
-  lastWord?: string
+  lastWord?: string,
+  role?: Role
 }
+
+export enum Role {CIVILIAN, UNDERCOVER, MR_WHITE}
 
 export type TurnEntity = {
   votes: Map<string, string>
