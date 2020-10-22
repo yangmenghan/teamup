@@ -1,4 +1,4 @@
-import styles from './createUserView.module.scss'
+import styles from './createPlayerView.module.scss'
 import React from 'react'
 import { siteSubtitle, siteTitle } from '../layout'
 
@@ -10,7 +10,7 @@ interface CreateGameState {
   name: string
 }
 
-export default class CreateUserView extends React.Component<CreateGameProps, CreateGameState> {
+export default class CreatePlayerView extends React.Component<CreateGameProps, CreateGameState> {
   constructor (prop: CreateGameProps) {
     super(prop)
     this.state = { name: '' }
@@ -32,7 +32,7 @@ export default class CreateUserView extends React.Component<CreateGameProps, Cre
         <h1 className={styles.title}>{siteTitle}</h1>
         <h4 className={styles.subtitle}>{siteSubtitle}</h4>
         <form onSubmit={this.handleSubmit}>
-          <input type={'text'} required name={'userName'} placeholder={'Your Name'} onChange={this.handleChange}/>
+          <input type={'text'} required name={'playerName'} placeholder={'Your Name'} onChange={this.handleChange}/>
           <div><input type={'submit'} value={'Start Game'}/></div>
         </form>
       </div>

@@ -5,13 +5,13 @@ import { createNewGame } from '../../../lib/backend/util/entityFactory'
 import { sendResult } from '../../../lib/backend/util/response'
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
-  return createGame(req.body.userName, res)
+  return createGame(req.body.playerName, res)
 
-  async function createGame (userName: string, res: NextApiResponse) {
+  async function createGame (playerName: string, res: NextApiResponse) {
     const gameId = uuidV4().substring(0, 5)
-    const userId = uuidV4()
-    const newGame = createNewGame(userId, userName)
+    const playerId = uuidV4()
+    const newGame = createNewGame(playerId, playerName)
     await db.ref('games/' + gameId).set(newGame)
-    sendResult(res, { gameId, userId })
+    sendResult(res, { gameId, playerId })
   }
 }

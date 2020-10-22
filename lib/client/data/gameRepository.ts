@@ -9,20 +9,20 @@ interface GameChangeListener {
 
 export class GameRepository {
 
-  static async createGame (userName: string): Promise<string> {
-    const response = await ApiDao.createGame(userName)
-    LocalDao.saveUser(response.userId)
+  static async createGame (playerName: string): Promise<string> {
+    const response = await ApiDao.createGame(playerName)
+    LocalDao.savePlayer(response.playerId)
     return response.gameId
   }
 
-  static async addUser (userName: string, gameId: string): Promise<string> {
-    const response = await ApiDao.addUser(userName, gameId)
-    LocalDao.saveUser(response.userId)
-    return response.userId
+  static async addPlayer (playerName: string, gameId: string): Promise<string> {
+    const response = await ApiDao.addPlayer(playerName, gameId)
+    LocalDao.savePlayer(response.playerId)
+    return response.playerId
   }
 
-  static getUserId(){
-    return LocalDao.getUserId()
+  static getPlayerId(){
+    return LocalDao.getPlayerId()
   }
 
   static subscribeToGameChanges (gameId: string, listener: GameChangeListener) {

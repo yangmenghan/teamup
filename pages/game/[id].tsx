@@ -5,7 +5,7 @@ import style from './[id].module.scss'
 import { WithRouterProps } from 'next/dist/client/with-router'
 import { PlayerEntity } from '../../lib/shared/models'
 import { GameRepository } from '../../lib/client/data/gameRepository'
-import CreateUserView from '../../components/createUser/createUserView'
+import CreatePlayerView from '../../components/createPlayer/createPlayerView'
 import { withRouter } from 'next/router'
 
 interface GameProps extends WithRouterProps {
@@ -32,7 +32,7 @@ export class Game extends React.Component<GameProps, GameState> {
 
   componentDidMount () {
     console.log('Showing game with id:' + this.props.id)
-    this.setState({ playerId: GameRepository.getUserId() })
+    this.setState({ playerId: GameRepository.getPlayerId() })
     GameRepository.subscribeToGameChanges(this.props.id, this)
   }
 
@@ -50,13 +50,13 @@ export class Game extends React.Component<GameProps, GameState> {
 
   private getUnregisteredPage = () => {
     return <Layout>
-      <CreateUserView onSubmit={this.addUser}/>
+      <CreatePlayerView onSubmit={this.addPlayer}/>
     </Layout>
   }
 
-  private addUser = async (userName: string) => {
-    const userId = await GameRepository.addUser(userName, this.props.id)
-    this.setState({ playerId: userId })
+  private addPlayer = async (playerName: string) => {
+    const playerId = await GameRepository.addPlayer(playerName, this.props.id)
+    this.setState({ playerId: playerId })
   }
 
   render () {

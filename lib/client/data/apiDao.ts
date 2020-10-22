@@ -1,11 +1,11 @@
 export class ApiDao {
 
-  static async createGame (userName: string) {
-    return this.post('/api/game/create', { userName })
+  static async createGame (playerName: string) {
+    return this.post('/api/game/create', { playerName })
   }
 
-  static async addUser (userName: string, gameId: string) {
-    return this.post(`/api/game/${gameId}/user`, { userName: userName })
+  static async addPlayer (playerName: string, gameId: string) {
+    return this.post(`/api/game/${gameId}/player`, { playerName: playerName })
   }
 
   private static async post (route: string, body: Object) {

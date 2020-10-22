@@ -13,19 +13,19 @@ export default function Player (prop: PlayerProp) {
   return (
     <div className={style.playerContainer}>
       <CurrentPlayerLayout isCurrentPlayer={player.isCurrentPlayer}>
-        <UserProfile player={player}/>
+        <PlayerProfile player={player}/>
       </CurrentPlayerLayout>
       <p className={style.word}>{player.lastWord}</p>
     </div>
   )
 }
 
-function UserProfile (prop: PlayerProp) {
+function PlayerProfile (prop: PlayerProp) {
   return <>
     <div className={style.profile}>
       <p className={style.nameInitial}>{prop.player.name.substring(0, 1)}</p>
     </div>
-    <p className={style.userName}>{prop.player.name}</p>
+    <p className={style.playerName}>{prop.player.name}</p>
   </>
 }
 

@@ -2,13 +2,13 @@ import Cookies from 'universal-cookie'
 
 export class LocalDao {
 
-  static saveUser (userId: string) {
+  static savePlayer (playerId: string) {
     const cookies = new Cookies()
-    cookies.set('userId', userId)
+    cookies.set('playerId', playerId)
   }
 
-  static getUserId () {
+  static getPlayerId () {
     const cookies = new Cookies()
-    return cookies.get('userId') as string
+    return cookies.get('playerId') as string
   }
 }
